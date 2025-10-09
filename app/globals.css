@@ -1,0 +1,5 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-underline{ text-underline-offset:8px; text-decoration-thickness:2px; }
