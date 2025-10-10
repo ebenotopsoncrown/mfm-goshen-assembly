@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-
-    "build:cf": "npx @cloudflare/next-on-pages@1"
+    "lint": "next lint"
   },
   "dependencies": {
     "firebase": "10.12.3",
@@ -35,5 +33,4 @@
     "node": ">=18.17"
   }
 }
-
 
