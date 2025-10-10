@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero"; // <-- named import (critical)
 export default function BeliefsPage() {
   return (
     <main>
-      <Hero title="Our Beliefs" />
+      <Hero />
       <Container className="prose prose-lg max-w-none py-16">
         <ul>
           <li>Scripture</li>
@@ -15,3 +15,4 @@ export default function BeliefsPage() {
     </main>
   );
 }
+
