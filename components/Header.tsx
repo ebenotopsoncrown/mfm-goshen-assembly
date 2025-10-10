@@ -16,12 +16,12 @@ export function Header() {
           {/* Logo and org name */}
           <Link href="/" className="flex items-center gap-3 text-white">
             <Image
-              src="/logo.png"
-              alt="MFM Logo"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
+              src="/images/logo.png"
+  alt="MFM Goshen Assembly"
+  width={160}
+  height={50}
+  priority
+/>
             <div className="leading-5">
               <div className="font-semibold">MFM Goshen Assembly</div>
               <div className="text-xs opacity-80">{ORG.countryLine}</div>
@@ -113,4 +113,5 @@ export function Header() {
     </header>
   );
 }
+
 
