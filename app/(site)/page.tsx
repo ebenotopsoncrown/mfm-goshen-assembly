@@ -4,22 +4,28 @@ import Image from "next/image";
 
 export default function HomePage() {
   const events = [
-    {
-      src: "/images/event1.jpg",
-      title: "Power Must Change Hands",
-      desc: "Every first Saturday of the month | 7AM",
-    },
-    {
-      src: "/images/event2.jpg",
-      title: "Manna Water Service",
-      desc: "Every Wednesday | 5PM",
-    },
-    {
-      src: "/images/event3.jpg",
-      title: "12 Days Fasting & Prayer",
-      desc: "Starting early 2025 — Theme: O Lord Satisfy Me Early",
-    },
-  ];
+  {
+    src: "/images/events.jpg",
+    title: "Power Must Change Hands",
+    desc: "Every first Saturday of the month | 7AM",
+  },
+  {
+    src: "/images/events2.jpg",
+    title: "Manna Water Service",
+    desc: "Every Wednesday | 5PM",
+  },
+  {
+    src: "/images/events3.jpg",
+    title: "12 Days Fasting & Prayer",
+    desc: "Start your year strong — Theme: O Lord, Satisfy Me Early",
+  },
+  {
+    src: "/images/events4.jpg",
+    title: "Special Deliverance Weekend",
+    desc: "Monthly deliverance program at MFM Goshen Assembly, Bournemouth",
+  },
+];
+
 
   return (
     <>
@@ -99,4 +105,5 @@ export default function HomePage() {
     </>
   );
 }
+
 
