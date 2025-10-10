@@ -30,34 +30,40 @@ export default function HomePage() {
       />
 
       {/* Come Experience God Section */}
-      <section className="relative bg-[#5B0099] text-white text-center py-16">
-        <div className="absolute inset-0">
-          <Image
-            src="/hero/hero-2.jpg"
-            alt="Experience God"
-            fill
-            className="object-cover opacity-40"
-          />
-        </div>
-        <div className="relative z-10">
-          <h2 className="text-4xl font-semibold mb-3">COME EXPERIENCE GOD</h2>
-          <p className="text-lg mb-4">
-            Sundays · 10:00am | Tuesdays · 7:00pm - Virtual
-          </p>
-          <p className="max-w-xl mx-auto text-sm text-gray-200 leading-relaxed">
-            Mountain of Fire and Miracles Ministries, Goshen Assembly, UK
-            <br />
-            2a Trident Court, East Moors Road, Cardiff, CF24 5TD
-            <br />
-            Email: info@mfmgoshenassembly.org.uk | Tel: +447311273548
-          </p>
-          <div className="flex justify-center gap-4 mt-6">
-            <button className="bg-white text-[#5B0099] px-6 py-2 rounded-full font-semibold hover:bg-gray-100">
-              Contact Us Now
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* Come Experience God Section */}
+<section className="relative bg-[#5B0099] text-white text-center py-16 overflow-hidden">
+  {["/images/experience.jpg", "/images/experience2.jpg"].map((src, i) => (
+    <Image
+      key={i}
+      src={src}
+      alt="Experience God"
+      fill
+      className={`object-cover absolute inset-0 transition-opacity duration-[2000ms] ${
+        i === 0 ? "opacity-100" : "opacity-0"
+      }`}
+    />
+  ))}
+  <div className="absolute inset-0 bg-black/60" />
+  <div className="relative z-10">
+    <h2 className="text-4xl font-semibold mb-3">COME EXPERIENCE GOD</h2>
+    <p className="text-lg mb-4">
+      Sundays · 10:00am | Tuesdays · 7:00pm - Virtual
+    </p>
+    <p className="max-w-xl mx-auto text-sm text-gray-200 leading-relaxed">
+      Mountain of Fire and Miracles Ministries, Goshen Assembly, UK
+      <br />
+      2a Trident Court, East Moors Road, Cardiff, CF24 5TD
+      <br />
+      Email: info@mfmgoshenassembly.org.uk | Tel: +447311273548
+    </p>
+    <div className="flex justify-center gap-4 mt-6">
+      <button className="bg-white text-[#5B0099] px-6 py-2 rounded-full font-semibold hover:bg-gray-100">
+        Contact Us Now
+      </button>
+    </div>
+  </div>
+</section>
+
 
       {/* Our Events & Programs Slider */}
       <section className="py-16 bg-gradient-to-r from-[#9c27b0] to-[#5B0099] text-white text-center">
@@ -93,3 +99,4 @@ export default function HomePage() {
     </>
   );
 }
+
