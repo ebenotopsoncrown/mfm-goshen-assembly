@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
 
-    // Optional: local test of Cloudflare build (NOT used by Pages automatically)
     "build:cf": "npx @cloudflare/next-on-pages@1"
   },
   "dependencies": {
@@ -36,4 +35,5 @@
     "node": ">=18.17"
   }
 }
+
 
