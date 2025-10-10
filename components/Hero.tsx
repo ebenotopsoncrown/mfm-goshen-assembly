@@ -47,44 +47,42 @@ export function Hero({
   }, [effectiveSlides.length, intervalMs]);
 
   return (
-    <section className="relative h-[280px] sm:h-[360px] md:h-[440px] lg:h-[520px] overflow-hidden">
-      {/* Slides */}
-      <div className="absolute inset-0 -z-10">
-        {effectiveSlides.map((s, i) => (
-          <div
-            key={s.src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-              i === index ? "opacity-100" : "opacity-0"
-            }`}
-            aria-hidden={i !== index}
-          >
-            <Image
-              src={s.src}
-              alt={s.alt ?? "Hero background"}
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-        ))}
-        <div className="absolute inset-0 bg-black/45" />
-      </div>
-
-      {/* Text */}
-      <div className="relative mx-auto max-w-7xl px-4">
-        <div className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-10 text-white">
-          {subtitle && (
-            <p className="text-white/85 text-sm sm:text-base">{subtitle}</p>
-          )}
-          {title && (
-            <h1 className="mt-2 font-serif text-3xl sm:text-4xl md:text-5xl leading-tight">
-              {title}
-            </h1>
-          )}
+  <section className="relative isolate h-[280px] sm:h-[360px] md:h-[440px] lg:h-[520px] overflow-hidden">
+    {/* Slides */}
+    {/* remove -z-10; keep it at default stacking level */}
+    <div className="absolute inset-0">
+      {effectiveSlides.map((s, i) => (
+        <div
+          key={s.src}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden={i !== index}
+        >
+          <Image
+            src={s.src}
+            alt={s.alt ?? "Hero background"}
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
-      </div>
-    </section>
-  );
-}
+      ))}
+      <div className="absolute inset-0 bg-black/45" />
+    </div>
 
+    {/* Text */}
+    {/* lift text above background explicitly */}
+    <div className="relative z-10 mx-auto max-w-7xl px-4">
+      <div className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-10 text-white">
+        {subtitle && <p className="text-white/85 text-sm sm:text-base">{subtitle}</p>}
+        {title && (
+          <h1 className="mt-2 font-serif text-3xl sm:text-4xl md:text-5xl leading-tight">
+            {title}
+          </h1>
+        )}
+      </div>
+    </div>
+  </section>
+);
