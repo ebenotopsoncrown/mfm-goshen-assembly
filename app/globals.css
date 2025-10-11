@@ -2,4 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fadeCycle {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  45%  { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+/* use on each background <Image>; stagger with inline animationDelay */
+.slide { animation: fadeCycle 12s linear infinite; }
+
+
 .nav-underline{ text-underline-offset:8px; text-decoration-thickness:2px; }
+
