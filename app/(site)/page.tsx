@@ -53,36 +53,68 @@ export default function HomePage() {
       {/* Come Experience God Section */}
       {/* Come Experience God Section */}
 <section className="relative bg-[#5B0099] text-white text-center py-16 overflow-hidden">
-  {["/images/experience.jpg", "/images/experience2.jpg"].map((src, i) => (
-    <Image
-      key={i}
-      src={src}
-      alt="Experience God"
-      fill
-      className={`object-cover absolute inset-0 transition-opacity duration-[2000ms] ${
-        i === 0 ? "opacity-100" : "opacity-0"
-      }`}
-    />
-  ))}
+
+  {/* Background cross-fade (12s loop, 6s per image) */}
+  <Image
+    src="/images/experience.jpg"
+    alt="Experience God"
+    fill
+    priority
+    className="absolute inset-0 object-cover opacity-0 will-change-[opacity] slide"
+    style={{ animationDelay: "0s" }}
+  />
+  <Image
+    src="/images/experience2.jpg"
+    alt="Experience God"
+    fill
+    className="absolute inset-0 object-cover opacity-0 will-change-[opacity] slide"
+    style={{ animationDelay: "6s" }}
+  />
+
+  {/* dark overlay */}
   <div className="absolute inset-0 bg-black/60" />
-  <div className="relative z-10">
-    <h2 className="text-4xl font-semibold mb-3">COME EXPERIENCE GOD</h2>
-    <p className="text-lg mb-4">
-      Sundays · 10:00am | Tuesdays · 7:00pm - Virtual
+
+  {/* content */}
+  <div className="relative z-10 px-4">
+    <h2 className="text-3xl sm:text-4xl font-semibold mb-3 tracking-tight">
+      COME AND EXPERIENCE GOD
+    </h2>
+
+    <p className="text-base sm:text-lg mb-4">
+      Sundays · 10:00am&nbsp;&nbsp;|&nbsp;&nbsp;Tuesdays · 7:00pm — Virtual
     </p>
-    <p className="max-w-xl mx-auto text-sm text-gray-200 leading-relaxed">
+
+    <p className="max-w-2xl mx-auto text-sm sm:text-base text-gray-200 leading-relaxed">
       Mountain of Fire and Miracles Ministries, Goshen Assembly, UK
       <br />
       2a Trident Court, East Moors Road, Cardiff, CF24 5TD
       <br />
-      Email: info@mfmgoshenassembly.org.uk | Tel: +447311273548
+      Email: info@mfmgoshenassembly.org.uk &nbsp;|&nbsp; Tel: +44&nbsp;7311&nbsp;273548
     </p>
-    <div className="flex justify-center gap-4 mt-6">
-      <button className="bg-white text-[#5B0099] px-6 py-2 rounded-full font-semibold hover:bg-gray-100">
+
+    <div className="flex justify-center mt-6">
+      <a
+        href="/contact"
+        className="inline-flex items-center rounded-full bg-white px-6 py-2 font-semibold text-[#5B0099] shadow-sm transition hover:bg-gray-100"
+      >
         Contact Us Now
-      </button>
+      </a>
     </div>
   </div>
+
+  {/* cross-fade keyframes (scoped) */}
+  <style jsx>{`
+    @keyframes fadeCycle {
+      0%   { opacity: 0; }
+      5%   { opacity: 1; }
+      45%  { opacity: 1; }
+      50%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .slide {
+      animation: fadeCycle 12s linear infinite;
+    }
+  `}</style>
 </section>
 
 
@@ -120,6 +152,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 
