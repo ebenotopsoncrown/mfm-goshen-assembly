@@ -45,6 +45,11 @@ export default function HomePage() {
   intervalMs={6000}
 />
 
+      {/* separator between hero and Experience section */}
+<section className="relative mx-auto max-w-7xl px-4">
+  <div className="my-10 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+</section>
+
       {/* Come Experience God Section */}
       {/* Come Experience God Section */}
 <section className="relative bg-[#5B0099] text-white text-center py-16 overflow-hidden">
@@ -115,6 +120,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 
