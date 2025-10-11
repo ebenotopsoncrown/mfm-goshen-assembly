@@ -52,22 +52,23 @@ export default function HomePage() {
 
       {/* Come Experience God Section */}
       {/* Come Experience God Section */}
+{/* Come Experience God Section (server-safe) */}
 <section className="relative bg-[#5B0099] text-white text-center py-16 overflow-hidden">
 
-  {/* Background cross-fade (12s loop, 6s per image) */}
+  {/* Cross-fade backgrounds (6s each, 12s loop total) */}
   <Image
     src="/images/experience.jpg"
     alt="Experience God"
     fill
     priority
-    className="absolute inset-0 object-cover opacity-0 will-change-[opacity] slide"
+    className="absolute inset-0 object-cover opacity-0 slide"
     style={{ animationDelay: "0s" }}
   />
   <Image
     src="/images/experience2.jpg"
     alt="Experience God"
     fill
-    className="absolute inset-0 object-cover opacity-0 will-change-[opacity] slide"
+    className="absolute inset-0 object-cover opacity-0 slide"
     style={{ animationDelay: "6s" }}
   />
 
@@ -101,22 +102,7 @@ export default function HomePage() {
       </a>
     </div>
   </div>
-
-  {/* cross-fade keyframes (scoped) */}
-  <style jsx>{`
-    @keyframes fadeCycle {
-      0%   { opacity: 0; }
-      5%   { opacity: 1; }
-      45%  { opacity: 1; }
-      50%  { opacity: 0; }
-      100% { opacity: 0; }
-    }
-    .slide {
-      animation: fadeCycle 12s linear infinite;
-    }
-  `}</style>
 </section>
-
 
       {/* Our Events & Programs Slider */}
       <section className="py-16 bg-gradient-to-r from-[#9c27b0] to-[#5B0099] text-white text-center">
@@ -152,6 +138,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 
