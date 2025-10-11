@@ -4,26 +4,20 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Header() {
-  return (
-    <header className="sticky top-0 z-50 bg-[#5B0099] text-white shadow-md">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 h-20">
-        {/* Left: Logo + Text */}
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="MFM Goshen Assembly Logo"
-            width={50}
-            height={50}
-            className="rounded-full"
-            priority
-          />
-          <div>
-            <h1 className="text-lg font-semibold leading-tight">
-              MFM Goshen Assembly
-            </h1>
-            <p className="text-sm text-gray-200">Bournemouth, United Kingdom</p>
-          </div>
+{/* Left/brand area */}
+<div className="flex items-center gap-3">
+  <Image
+    src="/images/logo.png"        // make sure the file is at public/images/logo.png
+    alt="MFM Goshen Assembly Bournemouth"
+    width={44}
+    height={44}
+    className="h-11 w-11 rounded-full"
+    priority
+  />
+  <span className="font-semibold text-white text-lg sm:text-xl">
+    MFM Goshen Assembly Bournemouth
+  </span>
+</div>
         </Link>
 
         {/* Navigation */}
@@ -45,3 +39,4 @@ export default function Header() {
     </header>
   );
 }
+
