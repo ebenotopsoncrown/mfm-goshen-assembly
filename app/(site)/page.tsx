@@ -31,9 +31,19 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <Hero
-        subtitle="Bournemouth, United Kingdom"
-        image="/hero/hero-1.jpg"
-      />
+  title="Welcome to MFM Goshen Assembly Bournemouth"
+  slides={[
+    { src: "/hero/hero-1.jpg" },
+    { src: "/hero/hero-2.jpg" },
+    { src: "/hero/hero-3.jpg" },
+    { src: "/hero/hero5.jpg" },
+    { src: "/hero/hero6.jpg" },
+    { src: "/hero/hero7.jpg" },
+    { src: "/hero/hero8.jpg" },
+    { src: "/hero/hero9.jpg" },
+  ]}
+  intervalMs={6000}
+/>
 
       {/* Come Experience God Section */}
       {/* Come Experience God Section */}
@@ -105,5 +115,6 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
